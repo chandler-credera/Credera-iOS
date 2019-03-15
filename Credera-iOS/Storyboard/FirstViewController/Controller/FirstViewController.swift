@@ -17,6 +17,9 @@ public protocol NavigationCompletedProtocol: class {
 class FirstViewController: UIViewController {
     
     let passedAlongInformationBetweenVC: String = "This is an example of passing information from one VC to another"
+    var youngSelected: Bool = false
+    var adultSelected: Bool = false
+    var seniorSelected: Bool = false
     
     @IBOutlet weak var navigationStatusLabel: UILabel!
     
@@ -36,10 +39,32 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func navigationExampleButtonClicked(_ sender: Any) {
-        let navigationIntermediateScreen = NavigationIntermediateViewController.getInstance(passedInformation: passedAlongInformationBetweenVC, delegate: self)
+        var selectedAges: [String] = []
+        if youngSelected {
+            selectedAges.append("young")
+        }
+        
+        let navigationIntermediateScreen = NavigationIntermediateViewController.getInstance(passedInformation: passedAlongInformationBetweenVC, selectedAges: selectedAges, delegate: self)
+        
         navigationController?.pushViewController(navigationIntermediateScreen, animated: true)
     }
     
+    @IBAction func youngButtonClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            sender.backgroundColor = UIColor.green
+            youngSelected = true
+        } else {
+            sender.backgroundColor = UIColor.red
+        }
+    }
+    @IBAction func adultButtonClicked(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.green
+    }
+    @IBAction func seniorButtonClicked(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.green
+    }
 }
 
 extension FirstViewController: NavigationCompletedProtocol {

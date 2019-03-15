@@ -16,6 +16,8 @@ class NavigationIntermediateViewController: UIViewController, NavigationHelper {
     var passedInformation: String?
     weak var delegate: NavigationCompletedProtocol?
     
+    var selectedAges: [String]?
+    
     @IBOutlet weak var passedInformationLabel: UILabel!
     
     override func viewDidLoad() {
@@ -25,17 +27,21 @@ class NavigationIntermediateViewController: UIViewController, NavigationHelper {
         setupUI()
     }
     
-    public static func getInstance(passedInformation: String, delegate: NavigationCompletedProtocol) -> UIViewController {
+    public static func getInstance(passedInformation: String, selectedAges: [String], delegate: NavigationCompletedProtocol) -> UIViewController {
         guard let navigationIntermediateController = getInstance() as? NavigationIntermediateViewController else {
             return UIViewController()
         }
         
         navigationIntermediateController.passedInformation = passedInformation
         navigationIntermediateController.delegate = delegate
+        navigationIntermediateController.selectedAges = selectedAges
+        
+        print(selectedAges)
         
         return navigationIntermediateController
     }
     
+    // this function is where the string from the previous view sets the labels text on this view
     func setupUI() {
         passedInformationLabel.text = passedInformation
     }

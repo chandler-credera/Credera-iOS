@@ -670,7 +670,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Credera-iOS/Pods-Credera-iOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Credera-iOS/Pods-Credera-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
@@ -683,7 +683,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Credera-iOS/Pods-Credera-iOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Credera-iOS/Pods-Credera-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6E47CAF03C248FD9B6EFE3C6 /* [CP] Check Pods Manifest.lock */ = {
