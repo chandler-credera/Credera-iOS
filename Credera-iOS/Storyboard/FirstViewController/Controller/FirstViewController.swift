@@ -36,12 +36,36 @@ class FirstViewController: UIViewController {
         }.catch { (error) in
             // Handle error...
         }
+        
+        userService.getUserByUsername(username: "Bret").then { (user) in
+            print(user)
+            }.catch { (error) in
+                // Handle error...
+                print(error)
+        }
+        
+        let animalApi: AnimalApi = AnimalApiImpl(caller: RequestCaller())
+        let animalService: AnimalService = AnimalServiceImpl(animalApi: animalApi)
+        
+        animalService.getAllAnimals().then { (animal) in
+            print(animal)
+        }.catch { (error) in
+                // Handle error...
+                print(error)
+        }
+        
     }
     
     @IBAction func navigationExampleButtonClicked(_ sender: Any) {
         var selectedAges: [String] = []
         if youngSelected {
             selectedAges.append("young")
+        }
+        if adultSelected {
+            selectedAges.append("adult")
+        }
+        if seniorSelected {
+            selectedAges.append("senior")
         }
         
         let navigationIntermediateScreen = NavigationIntermediateViewController.getInstance(passedInformation: passedAlongInformationBetweenVC, selectedAges: selectedAges, delegate: self)
@@ -57,11 +81,22 @@ class FirstViewController: UIViewController {
             youngSelected = true
         } else {
             sender.backgroundColor = UIColor.red
+            youngSelected = false
         }
     }
+    
     @IBAction func adultButtonClicked(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.green
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            sender.backgroundColor = UIColor.green
+            adultSelected = true
+        } else {
+            sender.backgroundColor = UIColor.red
+            adultSelected = false
+        }
     }
+    
     @IBAction func seniorButtonClicked(_ sender: UIButton) {
         sender.backgroundColor = UIColor.green
     }

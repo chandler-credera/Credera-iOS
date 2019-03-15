@@ -8,6 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		1C4D6B3DE27C746F5B67A025 /* Pods_Credera_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6428362F40383B253C816DD2 /* Pods_Credera_iOSUITests.framework */; };
+		1D6D8C59223C0F66008FFE66 /* AnimalsApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C58223C0F66008FFE66 /* AnimalsApiModel.swift */; };
+		1D6D8C5B223C0F84008FFE66 /* AnimalApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C5A223C0F84008FFE66 /* AnimalApiModel.swift */; };
+		1D6D8C5D223C0F9D008FFE66 /* BreedsApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C5C223C0F9D008FFE66 /* BreedsApiModel.swift */; };
+		1D6D8C5F223C0FAF008FFE66 /* ColorsApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C5E223C0FAF008FFE66 /* ColorsApiModel.swift */; };
+		1D6D8C61223C0FC3008FFE66 /* AttributesApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C60223C0FC3008FFE66 /* AttributesApiModel.swift */; };
+		1D6D8C63223C101E008FFE66 /* EnvironmentApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C62223C101E008FFE66 /* EnvironmentApiModel.swift */; };
+		1D6D8C65223C1071008FFE66 /* ContactApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C64223C1071008FFE66 /* ContactApiModel.swift */; };
+		1D6D8C67223C1081008FFE66 /* AnimalAddressApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C66223C1081008FFE66 /* AnimalAddressApiModel.swift */; };
+		1D6D8C69223C10A9008FFE66 /* LinksApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C68223C10A9008FFE66 /* LinksApiModel.swift */; };
+		1D6D8C6B223C10C3008FFE66 /* SelfApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C6A223C10C3008FFE66 /* SelfApiModel.swift */; };
+		1D6D8C6D223C10D1008FFE66 /* TypeApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C6C223C10D1008FFE66 /* TypeApiModel.swift */; };
+		1D6D8C6F223C10E0008FFE66 /* OrganizationApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C6E223C10E0008FFE66 /* OrganizationApiModel.swift */; };
+		1D6D8C72223C15F1008FFE66 /* AnimalApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C71223C15F1008FFE66 /* AnimalApi.swift */; };
+		1D6D8C74223C169F008FFE66 /* AnimalApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C73223C169F008FFE66 /* AnimalApiImpl.swift */; };
+		1D6D8C76223C1A15008FFE66 /* AnimalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C75223C1A15008FFE66 /* AnimalService.swift */; };
+		1D6D8C78223C1A89008FFE66 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C77223C1A89008FFE66 /* Animal.swift */; };
+		1D6D8C7A223C1B07008FFE66 /* AnimalServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C79223C1B07008FFE66 /* AnimalServiceImpl.swift */; };
+		1D6D8C7C223C1BA8008FFE66 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C7B223C1BA8008FFE66 /* Animals.swift */; };
+		1D6D8C7E223C317E008FFE66 /* PhotosApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C7D223C317E008FFE66 /* PhotosApiModel.swift */; };
 		3E617F5366241A675C34EAF3 /* Pods_Credera_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776C2608FC32935341C444AC /* Pods_Credera_iOSTests.framework */; };
 		5910781621DD1FC60017CA21 /* MainSinglePageApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5910781521DD1FC60017CA21 /* MainSinglePageApp.storyboard */; };
 		5910781B21DD21900017CA21 /* NavigationController+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910781A21DD21900017CA21 /* NavigationController+Transitions.swift */; };
@@ -68,6 +87,25 @@
 
 /* Begin PBXFileReference section */
 		175E6B0EE4A1BBE1ECB067D8 /* Pods-Credera-iOS.debug_qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Credera-iOS.debug_qa.xcconfig"; path = "Pods/Target Support Files/Pods-Credera-iOS/Pods-Credera-iOS.debug_qa.xcconfig"; sourceTree = "<group>"; };
+		1D6D8C58223C0F66008FFE66 /* AnimalsApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C5A223C0F84008FFE66 /* AnimalApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C5C223C0F9D008FFE66 /* BreedsApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C5E223C0FAF008FFE66 /* ColorsApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C60223C0FC3008FFE66 /* AttributesApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributesApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C62223C101E008FFE66 /* EnvironmentApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C64223C1071008FFE66 /* ContactApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C66223C1081008FFE66 /* AnimalAddressApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAddressApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C68223C10A9008FFE66 /* LinksApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C6A223C10C3008FFE66 /* SelfApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C6C223C10D1008FFE66 /* TypeApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C6E223C10E0008FFE66 /* OrganizationApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationApiModel.swift; sourceTree = "<group>"; };
+		1D6D8C71223C15F1008FFE66 /* AnimalApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalApi.swift; sourceTree = "<group>"; };
+		1D6D8C73223C169F008FFE66 /* AnimalApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalApiImpl.swift; sourceTree = "<group>"; };
+		1D6D8C75223C1A15008FFE66 /* AnimalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalService.swift; sourceTree = "<group>"; };
+		1D6D8C77223C1A89008FFE66 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		1D6D8C79223C1B07008FFE66 /* AnimalServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalServiceImpl.swift; sourceTree = "<group>"; };
+		1D6D8C7B223C1BA8008FFE66 /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
+		1D6D8C7D223C317E008FFE66 /* PhotosApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosApiModel.swift; sourceTree = "<group>"; };
 		2C09A73AF9A76DA74B9904E1 /* Pods-Credera-iOSUITests.debug_qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Credera-iOSUITests.debug_qa.xcconfig"; path = "Pods/Target Support Files/Pods-Credera-iOSUITests/Pods-Credera-iOSUITests.debug_qa.xcconfig"; sourceTree = "<group>"; };
 		5910781521DD1FC60017CA21 /* MainSinglePageApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSinglePageApp.storyboard; sourceTree = "<group>"; };
 		5910781A21DD21900017CA21 /* NavigationController+Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Transitions.swift"; sourceTree = "<group>"; };
@@ -155,6 +193,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D6D8C57223C0F1C008FFE66 /* AnimalModels */ = {
+			isa = PBXGroup;
+			children = (
+				1D6D8C58223C0F66008FFE66 /* AnimalsApiModel.swift */,
+				1D6D8C5A223C0F84008FFE66 /* AnimalApiModel.swift */,
+				1D6D8C5C223C0F9D008FFE66 /* BreedsApiModel.swift */,
+				1D6D8C5E223C0FAF008FFE66 /* ColorsApiModel.swift */,
+				1D6D8C60223C0FC3008FFE66 /* AttributesApiModel.swift */,
+				1D6D8C62223C101E008FFE66 /* EnvironmentApiModel.swift */,
+				1D6D8C64223C1071008FFE66 /* ContactApiModel.swift */,
+				1D6D8C66223C1081008FFE66 /* AnimalAddressApiModel.swift */,
+				1D6D8C68223C10A9008FFE66 /* LinksApiModel.swift */,
+				1D6D8C6A223C10C3008FFE66 /* SelfApiModel.swift */,
+				1D6D8C6C223C10D1008FFE66 /* TypeApiModel.swift */,
+				1D6D8C6E223C10E0008FFE66 /* OrganizationApiModel.swift */,
+				1D6D8C7D223C317E008FFE66 /* PhotosApiModel.swift */,
+			);
+			path = AnimalModels;
+			sourceTree = "<group>";
+		};
+		1D6D8C70223C15CB008FFE66 /* AnimalEndpoints */ = {
+			isa = PBXGroup;
+			children = (
+				1D6D8C71223C15F1008FFE66 /* AnimalApi.swift */,
+				1D6D8C73223C169F008FFE66 /* AnimalApiImpl.swift */,
+			);
+			path = AnimalEndpoints;
+			sourceTree = "<group>";
+		};
 		5910781321DD1F7C0017CA21 /* MainTabBarApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +455,8 @@
 				AFB6947F223AAA3A009473AE /* Models */,
 				AFB6947B223AA9ED009473AE /* UserService.swift */,
 				AFB6947D223AAA0C009473AE /* UserServiceImpl.swift */,
+				1D6D8C75223C1A15008FFE66 /* AnimalService.swift */,
+				1D6D8C79223C1B07008FFE66 /* AnimalServiceImpl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -431,6 +500,7 @@
 		AFB694742239F7AE009473AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1D6D8C57223C0F1C008FFE66 /* AnimalModels */,
 				AFB69484223AB4A6009473AE /* UserApiModel.swift */,
 				AFB6948B223AD709009473AE /* AddressApiModel.swift */,
 				591823AC223B05110062ED0C /* GeoApiModel.swift */,
@@ -442,6 +512,8 @@
 			isa = PBXGroup;
 			children = (
 				AFB69489223AD56E009473AE /* User.swift */,
+				1D6D8C77223C1A89008FFE66 /* Animal.swift */,
+				1D6D8C7B223C1BA8008FFE66 /* Animals.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,6 +521,7 @@
 		AFB69480223AB242009473AE /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				1D6D8C70223C15CB008FFE66 /* AnimalEndpoints */,
 				AFB69481223AB37C009473AE /* UserApi.swift */,
 				AFB694702239F19A009473AE /* UserApiImpl.swift */,
 			);
@@ -744,29 +817,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFB6946C22393EB0009473AE /* HttpResponse.swift in Sources */,
+				1D6D8C72223C15F1008FFE66 /* AnimalApi.swift in Sources */,
+				1D6D8C76223C1A15008FFE66 /* AnimalService.swift in Sources */,
+				1D6D8C5F223C0FAF008FFE66 /* ColorsApiModel.swift in Sources */,
 				5910783521DD2AC40017CA21 /* FirstViewController.swift in Sources */,
+				1D6D8C7A223C1B07008FFE66 /* AnimalServiceImpl.swift in Sources */,
+				1D6D8C74223C169F008FFE66 /* AnimalApiImpl.swift in Sources */,
+				1D6D8C67223C1081008FFE66 /* AnimalAddressApiModel.swift in Sources */,
 				AFD1E22E223A870700131E4A /* NavigationHelper.swift in Sources */,
+				1D6D8C7C223C1BA8008FFE66 /* Animals.swift in Sources */,
 				5910782A21DD28A40017CA21 /* AppHeaderView.swift in Sources */,
+				1D6D8C6B223C10C3008FFE66 /* SelfApiModel.swift in Sources */,
 				5910781E21DD22770017CA21 /* MainSinglePageAppViewController.swift in Sources */,
+				1D6D8C78223C1A89008FFE66 /* Animal.swift in Sources */,
+				1D6D8C7E223C317E008FFE66 /* PhotosApiModel.swift in Sources */,
 				AFD1E236223AA53D00131E4A /* NavigationFinalViewController.swift in Sources */,
 				591823AD223B05110062ED0C /* GeoApiModel.swift in Sources */,
+				1D6D8C69223C10A9008FFE66 /* LinksApiModel.swift in Sources */,
 				AFD1E22C223A84DF00131E4A /* NavigationIntermediateViewController.swift in Sources */,
 				5910782321DD252A0017CA21 /* MainTabBarAppViewController.swift in Sources */,
 				5910781B21DD21900017CA21 /* NavigationController+Transitions.swift in Sources */,
 				5910783021DD299F0017CA21 /* Constants.swift in Sources */,
+				1D6D8C5D223C0F9D008FFE66 /* BreedsApiModel.swift in Sources */,
 				AFB69478223A912F009473AE /* ApiProviderConfig.swift in Sources */,
 				AFB694712239F19A009473AE /* UserApiImpl.swift in Sources */,
+				1D6D8C6D223C10D1008FFE66 /* TypeApiModel.swift in Sources */,
+				1D6D8C6F223C10E0008FFE66 /* OrganizationApiModel.swift in Sources */,
+				1D6D8C61223C0FC3008FFE66 /* AttributesApiModel.swift in Sources */,
 				AFB6947E223AAA0C009473AE /* UserServiceImpl.swift in Sources */,
 				AFB694732239F3EF009473AE /* URLRequest+Extension.swift in Sources */,
 				AFB69485223AB4A6009473AE /* UserApiModel.swift in Sources */,
 				AFB6946022389FB2009473AE /* RequestCaller.swift in Sources */,
+				1D6D8C63223C101E008FFE66 /* EnvironmentApiModel.swift in Sources */,
 				5910782E21DD29410017CA21 /* XibView.swift in Sources */,
 				AFB6947C223AA9ED009473AE /* UserService.swift in Sources */,
+				1D6D8C59223C0F66008FFE66 /* AnimalsApiModel.swift in Sources */,
 				5949D1AD219CBBAC006D2FF0 /* AppDelegate.swift in Sources */,
+				1D6D8C65223C1071008FFE66 /* ContactApiModel.swift in Sources */,
 				AFB694682238A4AC009473AE /* HttpRequest.swift in Sources */,
 				5910783A21DD2BD80017CA21 /* SecondViewController.swift in Sources */,
 				5910783221DD29E00017CA21 /* UIColor+Extension.swift in Sources */,
 				AFB6948C223AD709009473AE /* AddressApiModel.swift in Sources */,
+				1D6D8C5B223C0F84008FFE66 /* AnimalApiModel.swift in Sources */,
 				AFB69482223AB37C009473AE /* UserApi.swift in Sources */,
 				AFB6948A223AD56E009473AE /* User.swift in Sources */,
 			);
