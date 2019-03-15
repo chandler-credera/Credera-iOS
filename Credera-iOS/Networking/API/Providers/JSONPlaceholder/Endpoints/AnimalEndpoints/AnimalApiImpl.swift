@@ -14,7 +14,7 @@ class AnimalApiImpl: AnimalApi {
     private let defaultPath: String = ""
     
     private let authHeader = "Authorization"
-    private let authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImQ2ZDUzYzgyMzU0NzA5MjYyMjJkMWUyMDAyZDczNGU4NGVkM2JiODk1ZDdlODhjYzFjMzBlOTRjZGZjYTk4ZTczOWRjZDhkZjFjYjc2M2YzIn0.eyJhdWQiOiJaVWpXeDJDTW1hNUlQT0FCTXZIUUtJeDhGNFV1TThJVWF6aEhBbU5lVE9Tam9IaDJDTiIsImp0aSI6ImQ2ZDUzYzgyMzU0NzA5MjYyMjJkMWUyMDAyZDczNGU4NGVkM2JiODk1ZDdlODhjYzFjMzBlOTRjZGZjYTk4ZTczOWRjZDhkZjFjYjc2M2YzIiwiaWF0IjoxNTUyNjc2ODUxLCJuYmYiOjE1NTI2NzY4NTEsImV4cCI6MTU1MjY4MDQ1MSwic3ViIjoiIiwic2NvcGVzIjpbXX0.ya8huvoyQ14ABsw3KOBl6rl51wf8DcqlRL49nzZTQ7B5ncTSZpktdQ_lLAkkkPASLtjqaC8CXnVwdkh8DT_lWq1BOiNwi3z6CKHPNmY2GhgYaLgjorZ7mE3gtUgx0jIjSfGUHUrllLo5YWMwqhiMaM4RVzItGFRWy43HeqnYUrYWr3dgqs1AgTed58OyVpBFfb_uHlZm3tWcKMns_1d6MCRfKgvAE5nRTvUDlN1HOu2Rhen75QI9aZ-O8TcRUZvcVvwHW67oOf_HEIeMAzPdt1ISGRq3Ighf9_Eivgh8de8xfPaFb2k2I2z_AHGuT7l76zVzU1kc82r_pqKmtUwaTA"
+    private let authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjEyZTNjY2VlZDQ0ODBiNTNlZWI2NWVlZDYzYjE1YmM4YmNmNzE5NWU3YjQyMjJjNThiOGMxNWEzOGUyZTE4YTFlZDViNjZkMzYwMzgxYzZjIn0.eyJhdWQiOiJaVWpXeDJDTW1hNUlQT0FCTXZIUUtJeDhGNFV1TThJVWF6aEhBbU5lVE9Tam9IaDJDTiIsImp0aSI6IjEyZTNjY2VlZDQ0ODBiNTNlZWI2NWVlZDYzYjE1YmM4YmNmNzE5NWU3YjQyMjJjNThiOGMxNWEzOGUyZTE4YTFlZDViNjZkMzYwMzgxYzZjIiwiaWF0IjoxNTUyNjgyMDQyLCJuYmYiOjE1NTI2ODIwNDIsImV4cCI6MTU1MjY4NTY0Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.F1lhm6X5Y_e0JEBwTk6SlSxQ3B-yvpJ4VuUefXVaircWm05Sa6c77kq2HZ7_KwdGDNQEMMMWdi6I2OKZqm2G_9jjeS0JzP3RJ3ktDhozQphtpNRB_sUP4O4052KY9WXDmcJMe2bj65sJuYyNCfkSrNN6UP6LESVVRvzUeAkWuzIZwT3QbfwlDQ1r4rLtQl8LV-8pCAkFEpoBDBixw7QxzSleoFcpRdlfbxTkpnpg5tugdHlV9GP4H1EjrmbI1vTeMjZ3YsWPhhqDlB9BJ48cLa7p2pwAL8oNMv5cAvVhWl51O8k6E3q664a_ZsHWZ8Qg6_NlNMkp7sRDMxlDRV526g"
     
     private var caller: RequestCaller
     
@@ -31,7 +31,6 @@ class AnimalApiImpl: AnimalApi {
     
     func readById(id: Int) -> Promise<AnimalApiModel> {
         let request = reqRead(id: id)
-        print(request)
         let response: Promise<AnimalApiModel> = caller.call(request.asURLRequest())
         
         return response

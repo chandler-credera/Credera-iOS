@@ -43,17 +43,6 @@ class FirstViewController: UIViewController {
                 // Handle error...
                 print(error)
         }
-        
-        let animalApi: AnimalApi = AnimalApiImpl(caller: RequestCaller())
-        let animalService: AnimalService = AnimalServiceImpl(animalApi: animalApi)
-        
-        animalService.getAllAnimals().then { (animal) in
-            print(animal)
-        }.catch { (error) in
-                // Handle error...
-                print(error)
-        }
-        
     }
     
     @IBAction func navigationExampleButtonClicked(_ sender: Any) {

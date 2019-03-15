@@ -25,6 +25,18 @@ class NavigationIntermediateViewController: UIViewController, NavigationHelper {
 
         // Do any additional setup after loading the view.
         setupUI()
+        
+        let animalApi: AnimalApi = AnimalApiImpl(caller: RequestCaller())
+        let animalService: AnimalService = AnimalServiceImpl(animalApi: animalApi)
+        
+        animalService.getAllAnimals().then { (animals) in
+            animals.animals.map({ (animal) in
+                print(animal.name)
+            })
+            }.catch { (error) in
+                // Handle error...
+                print(error)
+        }
     }
     
     public static func getInstance(passedInformation: String, selectedAges: [String], delegate: NavigationCompletedProtocol) -> UIViewController {

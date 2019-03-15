@@ -18,6 +18,7 @@ struct Animal {
     var gender: String = ""
     var size: String = ""
     var coat: String = ""
+    var tags: [String] = []
     var name: String = ""
     var description: String = ""
     var status: String = ""

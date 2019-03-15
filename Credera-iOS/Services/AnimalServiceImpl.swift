@@ -26,6 +26,7 @@ class AnimalServiceImpl: AnimalService {
             animals.animals = apiAnimals.animals ?? []
             
             return Promise({ () -> Animals in
+                //print(animals)
                 return animals
             })
         }
