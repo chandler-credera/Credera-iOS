@@ -34,6 +34,7 @@ class NavigationIntermediateViewController: UIViewController, NavigationHelper {
                 print(animal.name)
                 print(animal.age)
                 print(animal.id)
+                print(animal.mainPhotoUrl)
             })
             }.catch { (error) in
                 // Handle error...

@@ -21,6 +21,7 @@ struct Animal {
     var tags: [String] = []
     var name: String = ""
     var description: String = ""
+    var mainPhotoUrl: String = ""
     var status: String = ""
     var published_at: String = ""
     
