@@ -9,7 +9,7 @@
 import Foundation
 
 struct Animals {
-    var animals: [AnimalApiModel] = []
+    var animals: [Animal] = []
     
     init() {}
 }

@@ -18,18 +18,43 @@ class AnimalServiceImpl: AnimalService {
     }
     
     func getAllAnimals() -> Promise<Animals> {
+//        let apiResponse: Promise<AnimalsApiModel> = animalApi.read()
+//
+//        return apiResponse.then { (apiAnimals) in
+//
+//            var animals = Animals()
+//            animals.animals = apiAnimals.animals ?? []
+//
+//            return Promise({ () -> Animals in
+//                //print(animals)
+//                return animals
+//            })
+//        }
+        
         let apiResponse: Promise<AnimalsApiModel> = animalApi.read()
-        
-        return apiResponse.then { (apiAnimals) in
-        
+        return apiResponse.then { (apiAnimals) -> Animals in
             var animals = Animals()
-            animals.animals = apiAnimals.animals ?? []
+            //animals.animals = apiAnimals.animals ?? []
             
-            return Promise({ () -> Animals in
-                //print(animals)
-                return animals
+            let animalsArr: [AnimalApiModel] = apiAnimals.animals ?? []
+            
+            let mapped = animalsArr.map({ (apiAnimal) -> Animal in
+                var animal = Animal()
+                
+                animal.id = apiAnimal.id ?? -1
+                animal.name = apiAnimal.name ?? ""
+                
+                return animal
             })
+            
+            animals.animals = mapped
+            print("ANIMALS")
+            return animals
         }
+//        return Promise({ () -> Animals in
+//            return animals
+//
+//        })
     }
     
     // this one needs to be changed later because it sends

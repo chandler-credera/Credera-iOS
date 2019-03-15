@@ -32,6 +32,8 @@ class NavigationIntermediateViewController: UIViewController, NavigationHelper {
         animalService.getAllAnimals().then { (animals) in
             animals.animals.map({ (animal) in
                 print(animal.name)
+                print(animal.age)
+                print(animal.id)
             })
             }.catch { (error) in
                 // Handle error...
