@@ -11,4 +11,5 @@ import Foundation
 struct ApiProviderConfig {
     // TODO: Inject baseUrl string from some scheme related config?
     static let baseUrl: String = "https://jsonplaceholder.typicode.com"
+    static let petfinderBaseUrl: String = "https://api.petfinder.com/v2/animals"
 }

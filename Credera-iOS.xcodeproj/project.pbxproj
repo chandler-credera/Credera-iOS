@@ -27,6 +27,9 @@
 		1D6D8C7A223C1B07008FFE66 /* AnimalServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C79223C1B07008FFE66 /* AnimalServiceImpl.swift */; };
 		1D6D8C7C223C1BA8008FFE66 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C7B223C1BA8008FFE66 /* Animals.swift */; };
 		1D6D8C7E223C317E008FFE66 /* PhotosApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D8C7D223C317E008FFE66 /* PhotosApiModel.swift */; };
+		1D966B5422401F0D00054229 /* AnimalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D966B5322401F0D00054229 /* AnimalCollectionViewController.swift */; };
+		1D966B5722402D2100054229 /* AnimalCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D966B5622402D2100054229 /* AnimalCollection.storyboard */; };
+		1D966B5A22402F1F00054229 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D966B5922402F1F00054229 /* AnimalCollectionViewCell.swift */; };
 		3E617F5366241A675C34EAF3 /* Pods_Credera_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776C2608FC32935341C444AC /* Pods_Credera_iOSTests.framework */; };
 		5910781621DD1FC60017CA21 /* MainSinglePageApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5910781521DD1FC60017CA21 /* MainSinglePageApp.storyboard */; };
 		5910781B21DD21900017CA21 /* NavigationController+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910781A21DD21900017CA21 /* NavigationController+Transitions.swift */; };
@@ -106,6 +109,9 @@
 		1D6D8C79223C1B07008FFE66 /* AnimalServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalServiceImpl.swift; sourceTree = "<group>"; };
 		1D6D8C7B223C1BA8008FFE66 /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		1D6D8C7D223C317E008FFE66 /* PhotosApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosApiModel.swift; sourceTree = "<group>"; };
+		1D966B5322401F0D00054229 /* AnimalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewController.swift; sourceTree = "<group>"; };
+		1D966B5622402D2100054229 /* AnimalCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalCollection.storyboard; sourceTree = "<group>"; };
+		1D966B5922402F1F00054229 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
 		2C09A73AF9A76DA74B9904E1 /* Pods-Credera-iOSUITests.debug_qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Credera-iOSUITests.debug_qa.xcconfig"; path = "Pods/Target Support Files/Pods-Credera-iOSUITests/Pods-Credera-iOSUITests.debug_qa.xcconfig"; sourceTree = "<group>"; };
 		5910781521DD1FC60017CA21 /* MainSinglePageApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSinglePageApp.storyboard; sourceTree = "<group>"; };
 		5910781A21DD21900017CA21 /* NavigationController+Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Transitions.swift"; sourceTree = "<group>"; };
@@ -220,6 +226,24 @@
 				1D6D8C73223C169F008FFE66 /* AnimalApiImpl.swift */,
 			);
 			path = AnimalEndpoints;
+			sourceTree = "<group>";
+		};
+		1D966B5522402CEF00054229 /* AnimalCollectionController */ = {
+			isa = PBXGroup;
+			children = (
+				1D966B5622402D2100054229 /* AnimalCollection.storyboard */,
+				1D966B5922402F1F00054229 /* AnimalCollectionViewCell.swift */,
+				1D966B5822402D2900054229 /* Controller */,
+			);
+			path = AnimalCollectionController;
+			sourceTree = "<group>";
+		};
+		1D966B5822402D2900054229 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1D966B5322401F0D00054229 /* AnimalCollectionViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5910781321DD1F7C0017CA21 /* MainTabBarApp */ = {
@@ -389,6 +413,7 @@
 				5910781321DD1F7C0017CA21 /* MainTabBarApp */,
 				5910782421DD26190017CA21 /* FirstViewController */,
 				5910782521DD26250017CA21 /* SecondViewController */,
+				1D966B5522402CEF00054229 /* AnimalCollectionController */,
 				AFD1E227223A847E00131E4A /* NavigationIntermediateViewController */,
 				AFD1E231223AA3F600131E4A /* NavigationFinalViewController */,
 			);
@@ -690,6 +715,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D966B5722402D2100054229 /* AnimalCollection.storyboard in Resources */,
 				5910782021DD24AE0017CA21 /* MainTabBarApp.storyboard in Resources */,
 				AFD1E22A223A84C300131E4A /* NavigationIntermediate.storyboard in Resources */,
 				5910782721DD263C0017CA21 /* First.storyboard in Resources */,
@@ -824,6 +850,7 @@
 				1D6D8C7A223C1B07008FFE66 /* AnimalServiceImpl.swift in Sources */,
 				1D6D8C74223C169F008FFE66 /* AnimalApiImpl.swift in Sources */,
 				1D6D8C67223C1081008FFE66 /* AnimalAddressApiModel.swift in Sources */,
+				1D966B5422401F0D00054229 /* AnimalCollectionViewController.swift in Sources */,
 				AFD1E22E223A870700131E4A /* NavigationHelper.swift in Sources */,
 				1D6D8C7C223C1BA8008FFE66 /* Animals.swift in Sources */,
 				5910782A21DD28A40017CA21 /* AppHeaderView.swift in Sources */,
@@ -856,6 +883,7 @@
 				1D6D8C65223C1071008FFE66 /* ContactApiModel.swift in Sources */,
 				AFB694682238A4AC009473AE /* HttpRequest.swift in Sources */,
 				5910783A21DD2BD80017CA21 /* SecondViewController.swift in Sources */,
+				1D966B5A22402F1F00054229 /* AnimalCollectionViewCell.swift in Sources */,
 				5910783221DD29E00017CA21 /* UIColor+Extension.swift in Sources */,
 				AFB6948C223AD709009473AE /* AddressApiModel.swift in Sources */,
 				1D6D8C5B223C0F84008FFE66 /* AnimalApiModel.swift in Sources */,

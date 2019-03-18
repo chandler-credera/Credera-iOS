@@ -26,23 +26,6 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = AppHeaderView()
-        
-        // TODO: These can be set up through dependency injection instead...
-        let userApi: UserApi = UserApiImpl(caller: RequestCaller())
-        let userService: UserService = UserServiceImpl(userApi: userApi)
-        
-        userService.getAllUsers().then { (users) in
-            print(users)
-        }.catch { (error) in
-            // Handle error...
-        }
-        
-        userService.getUserByUsername(username: "Bret").then { (user) in
-            print(user)
-            }.catch { (error) in
-                // Handle error...
-                print(error)
-        }
     }
     
     @IBAction func navigationExampleButtonClicked(_ sender: Any) {
@@ -57,9 +40,9 @@ class FirstViewController: UIViewController {
             selectedAges.append("senior")
         }
         
-        let navigationIntermediateScreen = NavigationIntermediateViewController.getInstance(passedInformation: passedAlongInformationBetweenVC, selectedAges: selectedAges, delegate: self)
+        let animalCollectionScreen = AnimalCollectionViewController.getInstance(delegate: self)
         
-        navigationController?.pushViewController(navigationIntermediateScreen, animated: true)
+        navigationController?.pushViewController(animalCollectionScreen, animated: true)
     }
     
     @IBAction func youngButtonClicked(_ sender: UIButton) {
