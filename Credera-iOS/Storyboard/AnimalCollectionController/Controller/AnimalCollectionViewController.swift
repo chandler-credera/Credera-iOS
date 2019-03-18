@@ -74,7 +74,6 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return queriedAnimals.count
     }
@@ -88,9 +87,16 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
         }
         
         let animal = queriedAnimals[indexPath.row]
+        let animalPhotoString = animal.mainPhotoUrl
+        if let animalURL = URL(string: animalPhotoString){
+            if let data = try? Data(contentsOf: animalURL){
+                let animalImage = UIImage(data: data)
+                cell.animalImage.image = animalImage
+            }
+        }
         
-        print(animal)
-    
+        
+
         // Configure the cell
         cell.animalNameLabel.text = animal.name
     
