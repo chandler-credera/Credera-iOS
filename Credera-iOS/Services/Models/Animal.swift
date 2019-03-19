@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Animal {
     var id: Int = -1
@@ -24,6 +25,7 @@ struct Animal {
     var mainPhotoUrl: String = ""
     var status: String = ""
     var published_at: String = ""
+    var mainImage: UIImage = UIImage()
     
     init() {}
 }

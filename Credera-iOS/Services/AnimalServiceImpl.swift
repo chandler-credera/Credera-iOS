@@ -30,7 +30,10 @@ class AnimalServiceImpl: AnimalService {
                 
                 animal.id = apiAnimal.id ?? -1
                 animal.name = apiAnimal.name ?? ""
-                animal.mainPhotoUrl = apiAnimal.photos?.first?.small ?? ""
+                animal.mainPhotoUrl = apiAnimal.photos?.first?.full ?? ""
+                animal.description = apiAnimal.description ?? ""
+                animal.age = apiAnimal.age ?? ""
+                animal.gender = apiAnimal.gender ?? ""
                 
                 return animal
             })

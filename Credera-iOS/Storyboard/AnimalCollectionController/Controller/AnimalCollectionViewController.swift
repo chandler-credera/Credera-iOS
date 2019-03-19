@@ -67,7 +67,7 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
         // Pass the selected object to the new view controller.
     }
     */
-
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -88,19 +88,26 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
         
         let animal = queriedAnimals[indexPath.row]
         let animalPhotoString = animal.mainPhotoUrl
-        if let animalURL = URL(string: animalPhotoString){
-            if let data = try? Data(contentsOf: animalURL){
-                let animalImage = UIImage(data: data)
-                cell.animalImage.image = animalImage
+        if let animalURL = URL(string: animalPhotoString) {
+            if let data = try? Data(contentsOf: animalURL) {
+                if let animalImage = UIImage(data: data) {
+                    cell.animalImage.image = animalImage
+                }
             }
         }
         
-        
-
         // Configure the cell
         cell.animalNameLabel.text = animal.name
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("1 Selected ", queriedAnimals[indexPath.row].name)
+        if let navigationCompletedDelegate = delegate {
+            let animalProfileScreen = AnimalProfileViewController.getInstance(delegate: navigationCompletedDelegate, animal: queriedAnimals[indexPath.row])
+            navigationController?.pushViewController(animalProfileScreen, animated: true)
+        }
     }
 
     // MARK: UICollectionViewDelegate
@@ -112,13 +119,11 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
     }
     */
 
-    /*
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    */
-
+ 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
@@ -130,8 +135,6 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
     }
 
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
     }
     */
-
 }
