@@ -32,16 +32,7 @@ class AnimalProfileViewController: UIViewController, NavigationHelper {
         animalDescriptionLabel.text = selectedAnimal.description
         animalAgeLabel.text = selectedAnimal.age
         animalGenderLabel.text = selectedAnimal.gender
-       // animalImage.image = selectedAnimal.mainImage
-        
-        let animalPhotoString = selectedAnimal.mainPhotoUrl
-        if let animalURL = URL(string: animalPhotoString) {
-            if let data = try? Data(contentsOf: animalURL) {
-                if let animalImage = UIImage(data: data) {
-                    self.animalImage.image = animalImage
-                }
-            }
-        }
+        animalImage.image = selectedAnimal.mainImage
     }
     
     /*
@@ -64,5 +55,10 @@ class AnimalProfileViewController: UIViewController, NavigationHelper {
         
         return animalProfileController
     }
-
+    
+    // MARK: Actions
+    @IBAction func saveToFavorites(_ sender: UIBarButtonItem) {
+        delegate?.addAnimalToFavorites(animal: selectedAnimal)
+        navigationController?.popToRootViewController(animated: true)
+    }
 }

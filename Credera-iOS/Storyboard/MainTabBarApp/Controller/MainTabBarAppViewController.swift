@@ -23,10 +23,10 @@ class MainTabBarAppViewController: UITabBarController, UITabBarControllerDelegat
             viewControllerArray.append(firstVC)
         }
         
-        if let secondVC: UIViewController = UIStoryboard(name: "Second", bundle: Bundle.main).instantiateInitialViewController() {
-            viewControllerArray.append(secondVC)
-        }
-        
+//        if let secondVC: UIViewController = UIStoryboard(name: "Second", bundle: Bundle.main).instantiateInitialViewController() {
+//            viewControllerArray.append(secondVC)
+//        }
+//
         self.setViewControllers(viewControllerArray, animated: false)
         
         // Default to the Home Tab

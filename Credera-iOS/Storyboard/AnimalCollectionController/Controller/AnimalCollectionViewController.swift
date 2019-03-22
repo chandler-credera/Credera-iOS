@@ -87,17 +87,10 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
         }
         
         let animal = queriedAnimals[indexPath.row]
-        let animalPhotoString = animal.mainPhotoUrl
-        if let animalURL = URL(string: animalPhotoString) {
-            if let data = try? Data(contentsOf: animalURL) {
-                if let animalImage = UIImage(data: data) {
-                    cell.animalImage.image = animalImage
-                }
-            }
-        }
-        
+
         // Configure the cell
         cell.animalNameLabel.text = animal.name
+        cell.animalImage.image = animal.mainImage
     
         return cell
     }

@@ -11,72 +11,53 @@ import UIKit
 import Promises
 
 public protocol NavigationCompletedProtocol: class {
-    func showNavigationCompleted()
+    func addAnimalToFavorites(animal: Animal)
 }
 
 class FirstViewController: UIViewController {
+    @IBOutlet weak var animalNameLabel: UILabel!
+    @IBOutlet weak var animalImage: UIImageView!
     
-    let passedAlongInformationBetweenVC: String = "This is an example of passing information from one VC to another"
-    var youngSelected: Bool = false
-    var adultSelected: Bool = false
-    var seniorSelected: Bool = false
-    
-    @IBOutlet weak var navigationStatusLabel: UILabel!
+    var favoriteAnimal: Animal = Animal()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = AppHeaderView()
+
+        let defaultName = UserDefaults.standard.object(forKey: "favoriteAnimalName") as? String ?? favoriteAnimal.name
+        let defaultImageURL = UserDefaults.standard.object(forKey: "favoriteAnimalImage") as? String ?? ""
+        
+        if !defaultImageURL.isEmpty {
+            if let animalURL = URL(string: defaultImageURL) {
+                if let data = try? Data(contentsOf: animalURL) {
+                    if let animalImage = UIImage(data: data) {
+                        self.animalImage.image = animalImage
+                    }
+                }
+            }
+        } else {
+            animalImage.image = favoriteAnimal.mainImage
+        }
+        
+        animalNameLabel.text = defaultName
+        
     }
+    
+    // MARK: Actions
     
     @IBAction func navigationExampleButtonClicked(_ sender: Any) {
-        var selectedAges: [String] = []
-        if youngSelected {
-            selectedAges.append("young")
-        }
-        if adultSelected {
-            selectedAges.append("adult")
-        }
-        if seniorSelected {
-            selectedAges.append("senior")
-        }
-        
         let animalCollectionScreen = AnimalCollectionViewController.getInstance(delegate: self)
-        
         navigationController?.pushViewController(animalCollectionScreen, animated: true)
-    }
-    
-    @IBAction func youngButtonClicked(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        if sender.isSelected {
-            sender.backgroundColor = UIColor.green
-            youngSelected = true
-        } else {
-            sender.backgroundColor = UIColor.red
-            youngSelected = false
-        }
-    }
-    
-    @IBAction func adultButtonClicked(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        if sender.isSelected {
-            sender.backgroundColor = UIColor.green
-            adultSelected = true
-        } else {
-            sender.backgroundColor = UIColor.red
-            adultSelected = false
-        }
-    }
-    
-    @IBAction func seniorButtonClicked(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.green
     }
 }
 
 extension FirstViewController: NavigationCompletedProtocol {
-    func showNavigationCompleted() {
-        navigationStatusLabel.text = "Navigation to Final VC has been completed"
-        navigationStatusLabel.textColor = UIColor.red
+    func addAnimalToFavorites(animal: Animal) {
+        favoriteAnimal = animal
+        
+        // set the user defualt to hold this new value
+        UserDefaults.standard.set(animal.name, forKey: "favoriteAnimalName")
+        UserDefaults.standard.set(animal.mainPhotoUrl, forKey: "favoriteAnimalImage")
+        viewDidLoad()
     }
 }
