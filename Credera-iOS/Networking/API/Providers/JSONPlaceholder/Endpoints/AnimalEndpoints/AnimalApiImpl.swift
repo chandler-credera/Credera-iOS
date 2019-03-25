@@ -11,10 +11,22 @@ import Promises
 
 class AnimalApiImpl: AnimalApi {
     private let baseUrl: String = ApiProviderConfig.petfinderBaseUrl
-    private let defaultPath: String = "?type=dog"
+    private let defaultPath: String = "?type=dog&limit=20&location=75001"
     
     private let authHeader = "Authorization"
-    private let authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjkyMTlmZDdjNjNmNGFhNTljOGI3NGNiMjY0NWYyOWQyYTJhYWNmMzJmOTljYzI0YWU5ODhiNWQzNTkzMmU5MTdhZDc4MmE2MTFjNTczYTQ2In0.eyJhdWQiOiJaVWpXeDJDTW1hNUlQT0FCTXZIUUtJeDhGNFV1TThJVWF6aEhBbU5lVE9Tam9IaDJDTiIsImp0aSI6IjkyMTlmZDdjNjNmNGFhNTljOGI3NGNiMjY0NWYyOWQyYTJhYWNmMzJmOTljYzI0YWU5ODhiNWQzNTkzMmU5MTdhZDc4MmE2MTFjNTczYTQ2IiwiaWF0IjoxNTUzMDA4NTAxLCJuYmYiOjE1NTMwMDg1MDEsImV4cCI6MTU1MzAxMjEwMSwic3ViIjoiIiwic2NvcGVzIjpbXX0.t159VhlgSM9EYMXOglOf-RT5ypS6MdWPm7uRDu0ZAebNBry-pO6l1DleEs_p6Puv4Dv1Tksr3EiSFrcTj2RB9dyXwYQsZI6bs6DYHC4Zba5FoBhp0T8yKL-FgjZAjrcdfS526IfKuUorQv-GGM1xi5JHOujCNCRAxgqW-wn-GESJEvNy-jnUquQQBwAUKSbz1K77HqGw1QaY-GQaaXO52Kb-r1d72TADI-zeezYw1lMcHbiesG621Xq-xpQEK7wS0fQHHEBf45P2LTgt3f8aMMFdAlXE1AoV3sidK_Yr4vmey_8CyIxz_wbZdRnZndEd_D7JmGl4eb0tmEgIRKhAjA"
+    private var authToken = ""
+    
+    private let grantTypeKey = "grant_type"
+    private let grantTypeValue = "client_credentials"
+    
+    private let clientIdKey = "client_id"
+    private let clientIdValue = "ZUjWx2CMma5IPOABMvHQKIx8F4UuM8IUazhHAmNeTOSjoHh2CN"
+    
+    private let clientSecretKey = "client_secret"
+    private let clientSecretValue = "QwHNH4EmT8nfcGyFAn6M40U45kMgWnQ4t2ut1pCx"
+    
+    private let tokenDefaultPath = ""
+    private let tokenBaseURL = "https://api.petfinder.com/v2/oauth2/token"
     
     private var caller: RequestCaller
     
@@ -36,13 +48,26 @@ class AnimalApiImpl: AnimalApi {
         return response
     }
     
+    func  getToken() -> Promise<TokenApiModel> {
+        let request = reqToken()
+        let response: Promise<TokenApiModel> = caller.call(request.asURLRequest())
+        
+        return response
+    }
+    
     // region Request Helpers
     
     private func reqRead() -> HttpRequest {
+        authToken = UserDefaults.standard.string(forKey: "bearerToken") ?? authToken
+    
         return HttpRequest(httpMethod: HttpMethod.get, path: defaultPath, baseUrl: baseUrl, query: nil, payload: nil, headers: [authHeader: authToken])
     }
     
     private func reqRead(id: Int) -> HttpRequest {
         return HttpRequest(httpMethod: HttpMethod.get, path: String(id), baseUrl: baseUrl, query: nil, payload: nil, headers: [authHeader: authToken])
+    }
+    
+    private func reqToken() -> HttpRequest {
+        return HttpRequest(httpMethod: HttpMethod.post, path: tokenDefaultPath, baseUrl: tokenBaseURL, query: nil, payload: [grantTypeKey: grantTypeValue, clientIdKey: clientIdValue, clientSecretKey: clientSecretValue], headers: nil)
     }
 }

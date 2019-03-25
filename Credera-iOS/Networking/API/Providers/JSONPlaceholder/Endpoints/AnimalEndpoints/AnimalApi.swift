@@ -12,4 +12,6 @@ import Promises
 protocol AnimalApi {
     func read() -> Promise<AnimalsApiModel>
     func readById(id: Int) -> Promise<AnimalApiModel>
+    func getToken() -> Promise<TokenApiModel>
+    
 }

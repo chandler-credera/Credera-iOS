@@ -19,7 +19,14 @@ class AnimalServiceImpl: AnimalService {
     
     func getAllAnimals() -> Promise<Animals> {
         
+        let tokenExpiration = UserDefaults.standard.object(forKey: "tokenExpiration") as? Date ?? Date()
+        
+        if Date() > tokenExpiration {
+            getBearerToken()
+        }
+        
         let apiResponse: Promise<AnimalsApiModel> = animalApi.read()
+       
         return apiResponse.then { (apiAnimals) -> Animals in
             var animals = Animals()
             
@@ -35,11 +42,30 @@ class AnimalServiceImpl: AnimalService {
                 animal.age = apiAnimal.age ?? ""
                 animal.gender = apiAnimal.gender ?? ""
                 
+                if let animalURL = URL(string: apiAnimal.photos?.first?.full ?? "") {
+                    if let data = try? Data(contentsOf: animalURL) {
+                        if let animalImage = UIImage(data: data) {
+                            animal.mainImage = animalImage
+                        }
+                    }
+                }
+                
                 return animal
             })
             
             animals.animals = mapped
             return animals
+        }
+    }
+
+    func getBearerToken() {
+        let apiResponse: Promise<TokenApiModel> = animalApi.getToken()
+        
+        apiResponse.then { (token) in
+            let bearerToken = "Bearer " + (token.access_token ?? "")
+            let tokenExpiration = Date().addingTimeInterval(3600)
+            UserDefaults.standard.set(bearerToken, forKey: "bearerToken")
+            UserDefaults.standard.set(tokenExpiration, forKey: "tokenExpiration")
         }
     }
     

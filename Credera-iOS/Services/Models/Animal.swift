@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Animal {
+public struct Animal {
     var id: Int = -1
     var organization_id: String = ""
     var url: String = ""

@@ -10,13 +10,10 @@ import Foundation
 import Promises
 
 protocol UserService {
-    
-    // TODO: Figure out parameters needed for Create, Update and Delete functions...
     func create() -> Promise<User>
     func getAllUsers() -> Promise<[User]>
     func getUserByUsername(username: String) -> Promise<User>
     func getUserByEmail(email: String) -> Promise<User>
     func update(userId: Int) -> Promise<User>
     func delete(userId: Int) -> Promise<User>
-    
 }

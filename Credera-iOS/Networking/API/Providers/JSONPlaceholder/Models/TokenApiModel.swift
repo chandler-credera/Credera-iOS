@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct TokenApiModel: Codable {
+    let token_type: String?
+    let expires_in: Int?
+    let access_token: String?
+}

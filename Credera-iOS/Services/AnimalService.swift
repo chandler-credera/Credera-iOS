@@ -12,4 +12,5 @@ import Promises
 protocol AnimalService {
     func getAllAnimals() -> Promise<Animals>
     func getAnimalById(id: Int) -> Promise<Animal>
+    func getBearerToken()
 }
