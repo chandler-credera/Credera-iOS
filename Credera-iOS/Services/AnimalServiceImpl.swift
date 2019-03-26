@@ -21,12 +21,27 @@ class AnimalServiceImpl: AnimalService {
         
         let tokenExpiration = UserDefaults.standard.object(forKey: "tokenExpiration") as? Date ?? Date()
         
-        if Date() > tokenExpiration {
-            getBearerToken()
-        }
+        print(Date(), " : ", tokenExpiration)
         
+        if Date() > tokenExpiration {
+             return getBearerToken().then { (token) -> Promise<Animals> in
+                let bearerToken = "Bearer " + token.access_token
+                let tokenExpiration = Date().addingTimeInterval(TimeInterval(token.expires_in))
+                UserDefaults.standard.set(bearerToken, forKey: "bearerToken")
+                UserDefaults.standard.set(tokenExpiration, forKey: "tokenExpiration")
+                
+                // call the function for getting the animals
+                return self.getAnimals()
+            }
+        } else {
+            // call the function for getting the animals
+            return self.getAnimals()
+        }
+    }
+    
+    private func getAnimals() -> Promise<Animals> {
         let apiResponse: Promise<AnimalsApiModel> = animalApi.read()
-       
+        
         return apiResponse.then { (apiAnimals) -> Animals in
             var animals = Animals()
             
@@ -58,14 +73,18 @@ class AnimalServiceImpl: AnimalService {
         }
     }
 
-    func getBearerToken() {
+    func getBearerToken() -> Promise<Token> {
         let apiResponse: Promise<TokenApiModel> = animalApi.getToken()
         
-        apiResponse.then { (token) in
-            let bearerToken = "Bearer " + (token.access_token ?? "")
-            let tokenExpiration = Date().addingTimeInterval(3600)
-            UserDefaults.standard.set(bearerToken, forKey: "bearerToken")
-            UserDefaults.standard.set(tokenExpiration, forKey: "tokenExpiration")
+        return apiResponse.then { (token) in
+            var tempToken: Token = Token()
+            tempToken.access_token = token.access_token ?? ""
+            tempToken.expires_in = token.expires_in ?? 3600
+            tempToken.token_type = token.token_type ?? ""
+            
+            return Promise({ () -> Token in
+                return tempToken
+            })
         }
     }
     
