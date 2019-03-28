@@ -59,9 +59,7 @@ class AnimalApiImpl: AnimalApi {
     
     private func reqRead() -> HttpRequest {
         authToken = UserDefaults.standard.string(forKey: "bearerToken") ?? authToken
-        
-        print("AUTH TOKEN: ", authToken)
-    
+
         return HttpRequest(httpMethod: HttpMethod.get, path: defaultPath, baseUrl: baseUrl, query: nil, payload: nil, headers: [authHeader: authToken])
     }
     

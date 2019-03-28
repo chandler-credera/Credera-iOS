@@ -26,8 +26,6 @@ class AnimalProfileViewController: UIViewController, NavigationHelper {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("Selected Animal: ", selectedAnimal.name)
-        print(selectedAnimal.description)
         animalNameLabel.text = selectedAnimal.name
         animalDescriptionLabel.text = selectedAnimal.description
         animalAgeLabel.text = selectedAnimal.age

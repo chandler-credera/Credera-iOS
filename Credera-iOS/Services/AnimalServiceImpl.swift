@@ -21,8 +21,6 @@ class AnimalServiceImpl: AnimalService {
         
         let tokenExpiration = UserDefaults.standard.object(forKey: "tokenExpiration") as? Date ?? Date()
         
-        print(Date(), " : ", tokenExpiration)
-        
         if Date() > tokenExpiration {
              return getBearerToken().then { (token) -> Promise<Animals> in
                 let bearerToken = "Bearer " + token.access_token
@@ -63,6 +61,8 @@ class AnimalServiceImpl: AnimalService {
                             animal.mainImage = animalImage
                         }
                     }
+                } else {
+                    animal.mainImage = UIImage(named: "DefaultImage")!
                 }
                 
                 return animal

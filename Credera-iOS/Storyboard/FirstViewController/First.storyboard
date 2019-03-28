@@ -38,12 +38,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Favorite" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkZ-XW-bFQ">
-                                <rect key="frame" x="16" y="64" width="343" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6z-wp-3uG">
                                 <rect key="frame" x="16" y="617" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.55633383989334106" green="0.36415341437444293" blue="0.46449943981253417" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -53,7 +47,7 @@
                                     <action selector="navigationExampleButtonClicked:" destination="XI3-Hc-Dgg" eventType="touchUpInside" id="spO-V8-Eye"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zfG-kn-fpl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="zfG-kn-fpl">
                                 <rect key="frame" x="62" y="208" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="NN8-lc-FS7"/>
@@ -70,10 +64,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Favorite" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkZ-XW-bFQ">
+                                <rect key="frame" x="16" y="89" width="343" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.89817171790000006" blue="0.81116114620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="vNy-5f-uXM" firstAttribute="bottom" secondItem="w6z-wp-3uG" secondAttribute="bottom" constant="20" id="2F8-OV-OZF"/>
+                            <constraint firstItem="WkZ-XW-bFQ" firstAttribute="top" secondItem="vNy-5f-uXM" secondAttribute="top" constant="25" id="7ZR-LE-od0"/>
                             <constraint firstItem="vNy-5f-uXM" firstAttribute="trailing" secondItem="zfG-kn-fpl" secondAttribute="trailing" constant="63" id="86C-CQ-ykb"/>
                             <constraint firstItem="w6z-wp-3uG" firstAttribute="top" secondItem="zfG-kn-fpl" secondAttribute="bottom" constant="159" id="8H4-65-nvy"/>
                             <constraint firstItem="zfG-kn-fpl" firstAttribute="leading" secondItem="vNy-5f-uXM" secondAttribute="leading" constant="62" id="EBR-4f-quB"/>
@@ -83,7 +84,6 @@
                             <constraint firstItem="vNy-5f-uXM" firstAttribute="trailing" secondItem="WkZ-XW-bFQ" secondAttribute="trailing" constant="16" id="W6Y-2V-iPO"/>
                             <constraint firstItem="GzF-sf-vtM" firstAttribute="leading" secondItem="vNy-5f-uXM" secondAttribute="leading" constant="62" id="czt-8r-kEw"/>
                             <constraint firstItem="vNy-5f-uXM" firstAttribute="trailing" secondItem="GzF-sf-vtM" secondAttribute="trailing" constant="63" id="eIo-Xd-6NJ"/>
-                            <constraint firstItem="WkZ-XW-bFQ" firstAttribute="top" secondItem="vNy-5f-uXM" secondAttribute="top" id="fFk-hu-Sez"/>
                             <constraint firstItem="WkZ-XW-bFQ" firstAttribute="leading" secondItem="vNy-5f-uXM" secondAttribute="leading" constant="16" id="t3O-Qr-Ao6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vNy-5f-uXM"/>
@@ -100,6 +100,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DefaultImage" width="300" height="300"/>
         <image name="First" width="60" height="60"/>
     </resources>
 </document>

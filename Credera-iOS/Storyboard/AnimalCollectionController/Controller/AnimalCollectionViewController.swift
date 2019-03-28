@@ -47,13 +47,6 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
             self.dismiss(animated: false, completion: nil)
             self.collectionView.reloadData()
             
-            
-            animals.animals.map({ (animal) in
-                print(animal.name)
-                print(animal.age)
-                print(animal.id)
-                print(animal.mainPhotoUrl)
-            })
             }.catch { (error) in
                 // Handle error...
                 print(error)
@@ -108,7 +101,6 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("1 Selected ", queriedAnimals[indexPath.row].name)
         if let navigationCompletedDelegate = delegate {
             let animalProfileScreen = AnimalProfileViewController.getInstance(delegate: navigationCompletedDelegate, animal: queriedAnimals[indexPath.row])
             navigationController?.pushViewController(animalProfileScreen, animated: true)
