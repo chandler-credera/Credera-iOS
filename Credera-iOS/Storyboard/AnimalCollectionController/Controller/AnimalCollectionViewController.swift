@@ -32,9 +32,21 @@ class AnimalCollectionViewController: UICollectionViewController, NavigationHelp
         let animalApi: AnimalApi = AnimalApiImpl(caller: RequestCaller())
         let animalService: AnimalService = AnimalServiceImpl(animalApi: animalApi)
         
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating()
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
         animalService.getAllAnimals().then { (animals) in
             self.queriedAnimals = animals.animals
+            self.dismiss(animated: false, completion: nil)
             self.collectionView.reloadData()
+            
             
             animals.animals.map({ (animal) in
                 print(animal.name)
